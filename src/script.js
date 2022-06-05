@@ -31,8 +31,7 @@ const count = 50000
 const positions = new Float32Array(count * 3)
 const colors = new Float32Array(count * 3)
 
-for(let i = 0; i < count * 3; i++)
-{
+for (let i = 0; i < count * 3; i++) {
     positions[i] = (Math.random() - 0.5) * 10
     colors[i] = Math.random()
 }
@@ -50,8 +49,8 @@ particlesMaterial.color = new THREE.Color('#ff88cc')
 
 particlesMaterial.transparent = true
 particlesMaterial.alphaMap = particleTexture
-// particlesMaterial.alphaTest = 0.01
-// particlesMaterial.depthTest = false
+    // particlesMaterial.alphaTest = 0.01
+    // particlesMaterial.depthTest = false
 particlesMaterial.depthWrite = false
 particlesMaterial.blending = THREE.AdditiveBlending
 
@@ -69,8 +68,7 @@ const sizes = {
     height: window.innerHeight
 }
 
-window.addEventListener('resize', () =>
-{
+window.addEventListener('resize', () => {
     // Update sizes
     sizes.width = window.innerWidth
     sizes.height = window.innerHeight
@@ -110,13 +108,11 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
  */
 const clock = new THREE.Clock()
 
-const tick = () =>
-{
+const tick = () => {
     const elapsedTime = clock.getElapsedTime()
 
     // Update particles
-    for(let i = 0; i < count; i++)
-    {
+    for (let i = 0; i < count; i++) {
         let i3 = i * 3
 
         const x = particlesGeometry.attributes.position.array[i3]
